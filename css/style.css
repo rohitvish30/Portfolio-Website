@@ -36,20 +36,17 @@ nav ul,
 }
 
 body{
-  background-color: #2f2fa2;
+  background-color:#dfe3ee;
   transition:background 0.2s linear;
 }
 
 
 .text h1{
-  color:#fff;
+  color:#000;
   font-size: 3rem;
   cursor: context-menu; /*type of cursor */
 }
 
-.text p{
-  color:#fff;
-}
 
 header{
   display: flex;
@@ -61,26 +58,32 @@ header{
 
 
 .navbar{
-  background-color: #242582;
+  background-color: #3b5998;
   position:fixed;
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
   z-index: 2;
 }
 
-/* Change background on mouse-over */
+/* Change background on mouse-hover */
 .navbar a:hover {
   color:#ED5565;
 }
 
 
-header a,
+header a{
+  color : #fff;
+}
+
+.text p{
+  color: #000;
+}
+
 .about h1,
 .skills h1,
 .work h1,
-.text p,
 .contact h1{
-  color : #BEBEBE;
+  color : #000;
 }
 
 
@@ -152,6 +155,7 @@ span.m-left{
 
 .text a:hover{
   color:#fff;
+  background-color: #ED5565;
 }
 
 .text a::before{ /*gives the element properties before their original given properties*/
@@ -166,9 +170,62 @@ span.m-left{
   transition: .5s;
 }
 
+
+/* social media icons */
 .text a:hover::before{
   height: 100%;
 }
+
+.middle{
+  margin-top: 20px;
+}
+
+.btn{
+  display: inline-block;
+  width: 75px;
+  height: 60px;
+  background:#3b5998 ;
+  margin-top:10px;
+  margin-right:10px;
+  border-radius: 30%;
+  box-shadow: 0 5px 15px -5px #000070;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn i{
+  line-height: 30px;
+  font-size: 24px;
+  transition: 0.2s linear;
+  color: #fff;
+  text-align-last:center;
+}
+
+.btn:hover i{
+  transform: scale(1.3);
+  color: #f1f1f1;
+}
+
+.btn::before{
+  content:"";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  transform: scale(1.3);
+  background: #3498db;
+  transform: rotate(45deg);
+  left: -110%;
+  top: 90%;
+}
+
+/* .btn:hover::before{
+  animation: aaa 0.7s 1;
+  top:-10%;
+  left:-10%;
+  right: -10%;
+} */
+
 
 .profile-image img{
   width: 400px;
@@ -186,11 +243,12 @@ span.m-left{
   font-size: 10rem;
   z-index: 0;
   opacity: .1;
+  margin-bottom: 20px;
 }
 
 .about-me-info{
   max-width: 900px;
-  background-color: #242582;
+  background-color: #3b5998;
   box-shadow: 0 0 1.2rem rgba(0,0,0,.25);
   padding: 50px;
   position: relative;
@@ -203,7 +261,7 @@ span.m-left{
 
 .about-me-info p{
   font-size: 1.3rem;
-  color: #BEBEBE;
+  color: #fff;
 }
 
 .about-me-info p:nth-child(2),
@@ -237,7 +295,7 @@ span.m-left{
 
 .skills-info{
   font-size: 1.4rem;
-  color: #BEBEBE;
+  color: #000;
   max-width: 800px;
   position: relative;
   left: 50%;
@@ -302,7 +360,7 @@ div[class^='bar-']{
   color: #ED5565;
   font-size: 1.1rem;
   letter-spacing: 1px;
-  background-color: #242582;
+  background-color: #3b5998;
   outline: none;
   cursor:pointer;
 }
@@ -343,12 +401,117 @@ div.hideCategory{
   display:none;
 }
 
+/* WOrking for display on image */
+.showCategory img{
+  /* width: 100%;
+  height: 100%; */
 
-.showCategory{
-  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top:0px;
+  object-fit: cover;
+  /* left:calc(100% - 200px);
+  right:calc(100% - 100px);
+  transform: translateX(calc(-100% + 100px)); */
 }
 
 
+.showCategory,
+.hideCategory{
+  display: flex;
+  width: 90%;
+  /* height: 20%; */
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.single-team{
+  width: 360px;
+  height: 360px;
+  padding: 24px;
+  background: #fff;
+  position: relative;
+  display: flex;
+  align-items:flex-end;
+  transition: .6s ease-out;
+  box-shadow: 0 10px 10px rgba(0,0,0,.25);
+}
+
+.single-team:hover{
+  transform: translateY(15px);
+}
+
+.single-team:hover::before{
+  opacity: 1;
+}
+
+.single-team:hover .team-text{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.single-team::before{
+  content: "";
+  position: absolute;
+  top:0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top,#000,transparent);
+  z-index: 2;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.single-team .team-text{
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 0.5s;
+}
+
+.team-text h2{
+  margin: 0;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.team-text p{
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-top: 8px;
+  
+}
+
+.team-text a{
+  /* margin-top: 50px; */
+  /* padding-top: 5px; */
+  font-family: cursive;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  /* display:inline-flex; */
+  /* justify-content: ; */
+  border:1px solid #fff;
+  color: white;
+  border-radius: 20%;
+  margin: 20px 20px;
+  background-color: #3b5998;
+  text-decoration: none;
+}
+
+.team-text a:hover{
+  background-color: #ED5565;
+  transition:all .5s;
+}
+
+
+/*  */
 .contact{
   margin-top: 50px;
 }
@@ -360,8 +523,8 @@ form textarea{
   width:500px;
   padding: 20px;
   border:3px solid;
-  border-color: #BEBEBE;
-  background-color: #242582;
+  border-color: #000;
+  background-color: #3b5998;
   margin: 20px 0;
   outline: none;
   font-size: 1.2rem;
@@ -380,7 +543,7 @@ form input:last-child{
 }
 
 footer{
-  background-color: #242582;
+  background-color: #3b5998;
 }
 
 footer hr{
@@ -394,7 +557,7 @@ footer p{
   border:2 px solid #707070;
   font-size: 1.2rem;
   padding: 30px 0;
-  color: #BEBEBE;
+  color: #fff;
 } 
 
 /* DARK THEME  */
@@ -430,13 +593,18 @@ footer p{
   top: 2px;
   bottom: 2px;
   border-radius: 50%;
-  background-color:#2f2fa2;
+  background-color:#fff;
   position: absolute;
   transition: transform 0.2s linear;
 }
 
 .checkbox:checked + .label .ball{
   transform: translateX(24px);
+}
+
+
+.dark .text h1{
+  color:#fff;
 }
 
 .dark header h1,
@@ -447,6 +615,23 @@ footer p{
 .dark .work h1,
 .dark .contact h1{
   color : #707070;
+}
+
+.dark .skills-info,
+.dark .about-me-info p,
+.dark .footer p{
+color: #BEBEBE;
+}
+
+
+.dark form input,
+.dark form textarea{
+  border-color: #BEBEBE;
+}
+
+.dark .btn{
+    background-color: #181818 ;
+    box-shadow: 0 5px 15px -5px  rgba(0,0,0,.25);
 }
 
 .dark,
@@ -466,3 +651,4 @@ background-color: #252627;
 .dark .navbar{
   background-color: #181818 ;
 }
+
