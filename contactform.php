@@ -6,7 +6,7 @@ if(isset($_POST['submit'])){
   $mailFrom=$_POST['mail'];  
   $message=$_POST['message'];  
 
-  $mailTo = "therohit@the-rohit.com"
+  $mailTo = "therohit@the-rohit.com";
   $headers = "From: ".$mailFrom;
   $txt="You have received an e-mail from ".$name.".\n\n".$message;
 
@@ -14,3 +14,5 @@ if(isset($_POST['submit'])){
   header("Location:submit.html");
 
 }
+
+?>
