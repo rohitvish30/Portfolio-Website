@@ -34,6 +34,7 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#work">Projects</a></li>
             <li><a href="pdf.html">Resume</a></li>
+            <li><a href="extra_curricular.html">Extra-curricular</a></li>
           </ul>
         </nav>
       </header>
@@ -316,13 +317,12 @@
 
     <div class="container contact" id="contact">
       <h1>Contact</h1>
-      <form action="">
+      <form class="contact-form" action="contactform.php" method="POST">
         <input type="text" name="name" placeholder="Full name">
-        <input type="email" placeholder="Email">
-        <!-- check this below -->
-        <input type="text" placeholder="Subject">
+        <input type="email" name="mail" placeholder="Email">
+        <input type="text" name="subject" placeholder="Subject">
         <textarea name="message" cols="30" rows="10" placeholder="Message"></textarea>
-        <input type="submit">
+        <input type="submit" name="submit" value="Submit">
       </form>
     </div>
 
