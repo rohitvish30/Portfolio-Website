@@ -30,6 +30,7 @@ textarea:focus, input:focus {
 nav ul,
 .main-info-section,
 .work-category {
+  padding-top: 2%;
   display: flex;
   flex-wrap: wrap;
   justify-content:space-between;
