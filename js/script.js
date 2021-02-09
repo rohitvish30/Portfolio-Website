@@ -1,60 +1,74 @@
-const checkboxBody=document.getElementById('checkbox');
+var $ = jQuery.noConflict();
 
-checkboxBody.addEventListener('change',()=>{
-    document.body.classList.toggle('dark');
-})
+$(document).ready(function() {
+//mobile search bar
+  $('.menu-icon').click(
+    function(){
+      $(this).toggleClass("open");
+      if($(this).hasClass('open')) {
+        $('.nav-bar .links').addClass('show');
+      }else{
+        $('.nav-bar .links').removeClass('show');
+      }
+    }
+  );
 
-const spans=document.querySelectorAll('h1 span')
-spans.forEach(span => span.addEventListener('mouseover',function(e){
-    span.classList.add('animated','rubberBand')
-}))
-spans.forEach(span=> span.addEventListener('mouseout',function(e){
-    span.classList.remove('animated','rubberBand')
-}))
+  $('.labels .system-design').click(
+    function(){
+      $('.lists .list').removeClass('show');
+      $('.labels .title').removeClass('active');
+      $(this).addClass('active')
+      $('.lists .system-design').addClass('show');
+    }
+  )
+  $('.labels .web-design').click(
+    function(){
+      $('.lists .list').removeClass('show');
+      $('.labels .title').removeClass('active');
+      $(this).addClass('active')
+      $('.lists .web-design').addClass('show');
+    }
+  )
+  $('.labels .nlp-engg').click(
+    function(){
+      $('.lists .list').removeClass('show');
+      $('.labels .title').removeClass('active');
+      $(this).addClass('active')
+      $('.lists .nlp-engg').addClass('show');
+    }
+  )
+  $('.labels .data-analyst').click(
+    function(){
+      $('.lists .list').removeClass('show');
+      $('.labels .title').removeClass('active');
+      $(this).addClass('active')
+      $('.lists .data-analyst').addClass('show');
+    }
+  )
+});
 
+
+
+
+const progBar=document.querySelector('.bar-prog')
 const htmlBar=document.querySelector('.bar-html')
-const cssBar=document.querySelector('.bar-css')
-const jsBar=document.querySelector('.bar-javascript')
-const reactBar=document.querySelector('.bar-react')
+const nlpBar=document.querySelector('.bar-nlp')
+const dataBar=document.querySelector('.bar-data')
 
 var t1=new TimelineLite()
 
-t1.fromTo(htmlBar, .75,{width:`calc(0% - 6px)`},{width:`calc(90% - 6px)`,ease: Power4.easeOut})
-    .fromTo(cssBar, .75,{width:`calc(0% - 6px)`},{width:`calc(80% - 6px)`,ease: Power4.easeOut})
-    .fromTo(jsBar, .75,{width:`calc(0% - 6px)`},{width:`calc(75% - 6px)`,ease: Power4.easeOut})
-    .fromTo(reactBar, .75,{width:`calc(0% - 6px)`},{width:`calc(90% - 6px)`,ease: Power4.easeOut})
+t1.fromTo(progBar, .75,{width:`calc(0% - 6px)`},{width:`calc(90% - 6px)`,ease: Power4.easeOut})
+    .fromTo(htmlBar, .75,{width:`calc(0% - 6px)`},{width:`calc(75% - 6px)`,ease: Power4.easeOut})
+    .fromTo(nlpBar, .75,{width:`calc(0% - 6px)`},{width:`calc(65% - 6px)`,ease: Power4.easeOut})
+    .fromTo(dataBar, .75,{width:`calc(0% - 6px)`},{width:`calc(85% - 6px)`,ease: Power4.easeOut})
 
 const controller=new ScrollMagic.Controller();
 const scene=new ScrollMagic.Scene({
-    triggerElement:'.skills',
+    triggerElement:'.skill',
     triggerHook:0
 })
 .setTween(t1)
 .addTo(controller)
 
-
-function showRequiredCategory(event){
-    const getId=event.id
-    const links=document.querySelectorAll('.work-category button')
-    for(i=0;i<links.length;i++){
-        if(links[i].hasAttribute('class')){
-            links[i].classList.remove('active')
-        }
-    }
-
-    event.classList.add('active')
-    const getCategory =document.querySelector(`.category-${getId}`)
-    const categories = document.querySelectorAll('div[class^="category-"]')
-    for(i=0;i<categories.length;i++){
-        if(categories[i].hasAttribute('class')){
-            categories[i].classList.remove('showCategory')
-            categories[i].classList.add('hideCategory')
-        }
-    }
-
-    getCategory.classList.remove('hideCategory')
-    getCategory.classList.add('showCategory')
-
-}
 
 
