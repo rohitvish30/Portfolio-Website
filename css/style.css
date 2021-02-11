@@ -187,23 +187,23 @@ display: none;
 .desc{font-size: 16px;line-height: 20px;max-height: 40px;height: auto;overflow: hidden;color:#777777;margin:10px 0}
 .btn{display: inline-block;font-size: 20px;font-weight: 700;color:#3B5998}
 
-.projects .expense-app .img{background-image: url(../img/soft-02.png);}
-.projects .dist-tla .img{background-image: url(../img/soft-002.png);}
-.projects .chat-app .img{background-image: url(../img/soft-1.png);}
+.projects .expense-app .img{background-image: url(../img/soft-02.PNG);}
+.projects .dist-tla .img{background-image: url(../img/soft-002.PNG);}
+.projects .chat-app .img{background-image: url(../img/soft-1.PNG);}
 .projects .pint-OS .img{background-image: url(../img/soft-2.PNG);}
 .projects .card-game .img{background-image: url(../img/soft-3.PNG);}
 .projects .ctci-java .img{background-image: url(../img/soft-4.PNG);}
-.projects .leetcode .img{background-image: url(../img/soft-5.png);}
-.projects .portfolio .img{background-image: url(../img/web-develop-1.png);}
-.projects .garden .img{background-image: url(../img/web-develop-2.png);}
-.projects .hotel .img{background-image: url(../img/web-develop-3.png);}
-.projects .fact .img{background-image: url(../img/nlp-1.png);}
-.projects .sentiment .img{background-image: url(../img/nlp-2.png);}
-.projects .movie-genre .img{background-image: url(../img/data-3.png);}
-.projects .big-data .img{background-image: url(../img/data-5.png);}
+.projects .leetcode .img{background-image: url(../img/soft-5.PNG);}
+.projects .portfolio .img{background-image: url(../img/web-develop-1.PNG);}
+.projects .garden .img{background-image: url(../img/web-develop-2.PNG);}
+.projects .hotel .img{background-image: url(../img/web-develop-3.PNG);}
+.projects .fact .img{background-image: url(../img/nlp-1.PNG);}
+.projects .sentiment .img{background-image: url(../img/nlp-2.PNG);}
+.projects .movie-genre .img{background-image: url(../img/data-3.PNG);}
+.projects .big-data .img{background-image: url(../img/data-5.PNG);}
 .projects .predictive-analytics .img{background-image: url(../img/data-1.PNG);}
 .projects .machine-learning .img{background-image: url(../img/data-4.PNG);}
-.projects .data-analysis .img{background-image: url(../img/data-2.png);}
+.projects .data-analysis .img{background-image: url(../img/data-2.PNG);}
 
 .projects .labels{margin-bottom: 20px;overflow-x: auto;overflow-y: hidden;white-space: nowrap;}
 .projects .labels p{display:inline-block;text-align: center;font-size: 16px;height: 40px;margin:0 10px 15px 10px;border-bottom: 3px solid #3B5998;padding:5px 0;width:254px;transition: .2s ease-in-out;}
@@ -304,8 +304,8 @@ width: calc(0-6px);
   }
 
   .social-link{display: inline-block;vertical-align: middle;height:25px;width:25px;background-repeat: no-repeat;background-position: center;background-size: 30px;margin-right: 10px;margin-top:20px}
-  .linkedin-icon{background-image: url(../img/linkedin-ico.png);background-size: 25px;}
-  .git-hub-icon{background-image: url(../img/github-icon.png);}
+  .linkedin-icon{background-image: url(../img/linkedin-ico.PNG);background-size: 25px;}
+  .git-hub-icon{background-image: url(../img/github-icon.PNG);}
 
   
   @media screen and (min-width: 1025px){ 
